@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 
 import { useActiveAccount } from "thirdweb/react";
 import { ConnectWalletButton } from "../auth/ConnectWalletButton";
+import TopUp from "../Topup";
 
 export default function Header() {
   const account = useActiveAccount();
@@ -43,6 +44,14 @@ export default function Header() {
                 fill="#5D5D5D"
               />
             </svg>
+          </div>
+
+          {/* Top up Button */}
+
+          <div>
+            <div>
+              <TopUp />
+            </div>
           </div>
 
           {/* User Profile */}

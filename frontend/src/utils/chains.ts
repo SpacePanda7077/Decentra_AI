@@ -29,6 +29,38 @@ export const torusMainnetConfig = {
   },
 };
 
+// Hedera Testnet configuration
+export const hederaTestnetConfig = {
+  id: 296,
+  name: "Hedera Testnet",
+  nativeCurrency: {
+    decimals: 18,
+    name: "HBAR",
+    symbol: "HBAR",
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://testnet.hashio.io/api"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Hedera Explorer",
+      url: "https://hashscan.io/testnet",
+    },
+  },
+  testnet: true,
+  custom: {
+    tokens: {
+      UnrealToken: {
+        address: "0x8bcEac95cb3AAF12358Dde73c16bB293f4b028C1" as const,
+        symbol: "UNREAL",
+        name: "Unreal Token",
+        decimals: 18,
+      },
+    },
+  },
+};
 // Titan AI Testnet configuration
 export const titanAITestnetConfig = {
   id: 1020352220,
@@ -104,6 +136,7 @@ export const amoyTestnetConfig = {
 
 export const torusMainnet = defineChain(torusMainnetConfig);
 export const titanAITestnet = defineChain(titanAITestnetConfig);
+export const hederaTestnet = defineChain(hederaTestnetConfig);
 export const amoyTestnet = defineChain(amoyTestnetConfig);
 
 // Map of chain IDs to defined chain objects
