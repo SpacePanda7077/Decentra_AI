@@ -5,7 +5,7 @@
 ![DeCenter AI Logo](https://github.com/DeCenter-AI/.github/assets/131058062/7fceb64d-f875-4d08-b13e-aff561aab234)
 
 
-# DeCenter AI B2B API Platform
+# DeCenter AI B2B API Platform - Access to 400+ premium AI models and agents for $0.01 HBAR.
 
 A fast, unified way for businesses to generate API keys and connect to our global network of AI models and agents.
 
@@ -17,6 +17,78 @@ DeCenter AI is a unified AI studio that connects users to thousands of premium A
 The platform provides developers with easy API access to an **AI network of 400+ models and agents**, powered by **Hedera’s Consensus Service (HCS)** for transparent inference tracking and **Hedera Token Service (HTS)** for seamless microtransactions in **HBAR**.
 
 DeCenter AI bridges **AI & DePIN** — combining smart autonomous AI systems with decentralized infrastructure for trust, scalability, and accessibility.
+
+---
+
+
+## 🧩 Problems We Solve
+
+Today’s AI landscape is fragmented and expensive.
+
+- **Too Many Options:** Hundreds of apps that do the same thing with minor variations, creating confusion and inefficiency.  
+- **Too Many Payments:** Every tool requires a separate subscription, making AI usage costly and unsustainable.  
+- **Too Much Hassle:** Users switch between multiple platforms just to complete a single task, wasting time and energy.  
+
+---
+
+## 💰 Market Opportunity
+
+This fragmentation fuels the massive gap between free and premium AI users.
+
+- **TAM:** $305B AI Market  
+- **SAM:** 1.8B total AI users  
+- **SOM:** 1.7B free AI users (97% use only free versions)  
+
+💭 *What if we could bring the best of AI to the 97%, at near-zero cost?*
+
+---
+
+## ⚙️ How We Solve It
+
+We are building a **Unified AI Studio** that connects users to thousands of premium AI tools, powered by a **Super Agent** that automatically selects the best-performing model for every prompt — for just **one cent per inference**.
+
+---
+
+## 🦾 The Product We Built
+
+For the hackathon, we built a **B2B platform** that allows developers and organizations to:
+
+- Generate API keys to access our AI network.  
+- Connect directly to over **400+ AI models and agents**.  
+- Pay just **$0.01 per inference**.  
+
+This enables anyone to power their applications with high-quality AI — seamlessly and affordably.
+
+---
+
+## 💡 Innovation and Hedera Integrations
+
+Our architecture is built on three core principles:
+
+- **Agentic:** Intelligent orchestration of AI agent results.  
+- **Agnostic:** Accessible across any connected device or platform.  
+- **Abstracted:** API-native for effortless integration and deployment.  
+
+### Hedera AI Agent Integrations:
+
+- **LangGraph / LangChain** – Dynamic AI orchestration.  
+- **ILM (Inference Lifecycle Management)** – Performance optimization.  
+- **Hedera Consensus Service (HCS)** – Records inference logs and verification hashes.  
+- **Hedera Token Service (HTS)** – Processes microtransactions in HBAR via testnet wallets.  
+
+**Workflow:**  
+`Prompt → AI Selection (via Super Agent) → Hedera Registry (HCS Logging) → Output Delivery`
+
+---
+
+## 🔲 Core Impact
+
+DeCenter AI empowers developers and businesses to:
+
+- Access premium AI capabilities without enterprise pricing barriers.  
+- Build trustworthy AI applications with verifiable inference records.  
+- Reduce AI infrastructure costs by over **90%** using decentralized micro-billing.  
+- Support community-powered AI infrastructure running on Hedera, aligning with the **AI & DePIN mission** of building smarter, decentralized systems.
 
 ---
 
