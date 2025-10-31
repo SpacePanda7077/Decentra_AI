@@ -38,10 +38,10 @@ Prompt
 
 **Tech Stack**
 - Frontend: React / Next.js  
-- Backend: Node.js / Express / FastAPI  
-- AI Layer: LangChain, LangGraph, OpenAI, Anthropic, Groq, etc.  
+- Backend: Node.js 
+- AI Layer: LangChain, LangGraph, OpenAI, etc.  
 - Blockchain Layer: Hedera HCS + HTS for transparency and payments  
-- Database: PostgreSQL / MongoDB  
+- Database: Supabase
 
 ---
 
@@ -52,129 +52,12 @@ Prompt
 - **Efficiency:** Hedera’s low-cost, carbon-negative network supports affordable large-scale AI operations.  
 - **Trust Layer:** Hedera provides decentralized auditability for AI decision-making and logging.
 
----
-
-## ⚡ **Quick Start**
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/decenter-ai/decenter-ai.git
-cd decenter-ai
-```
-
-### 2. Install Dependencies
-```bash
-npm install
-# or
-yarn install
-```
-
----
-
-## ⚙️ **Edit `.env`**
-
-Create a `.env` file in the project root with the following variables:
-
-```
-# Backend Configuration
-PORT=5000
-MONGO_URI=
-POSTGRES_URI=
-JWT_SECRET=
-
-# AI Configuration
-OPENAI_API_KEY=
-ANTHROPIC_API_KEY=
-GROQ_API_KEY=
-
-# Hedera Configuration
-HEDERA_ACCOUNT_ID=
-HEDERA_PRIVATE_KEY=
-HEDERA_NETWORK=testnet
-HTS_TOKEN_ID=
-
-# Payment / Billing
-INFERENCE_PRICE=0.01
-```
-
----
-
-## 🧠 **Repo Overview**
-
-```
-decenter-ai/
-│
-├── frontend/              # React / Next.js client
-│   ├── components/
-│   ├── pages/
-│   └── styles/
-│
-├── backend/               # Node.js / Express API
-│   ├── routes/
-│   ├── controllers/
-│   ├── services/
-│   ├── models/
-│   └── utils/
-│
-├── ai-agent/              # LangChain + Hedera integration layer
-│   ├── agent.py
-│   ├── ilm_manager.py
-│   └── hedera_client.py
-│
-└── README.md
-```
-
----
-
-## 💻 **Frontend Setup**
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-The frontend runs on [http://localhost:3000](http://localhost:3000)
-
----
-
-## 🧩 **Backend Setup**
-
-```bash
-cd backend
-npm install
-npm run dev
-```
-
-The backend runs on [http://localhost:5000](http://localhost:5000)
-
-
----
-
-## 🚀 **Deployment**
-
-### **Frontend Deployment**
-```bash
-vercel --prod
-# or deploy on Netlify
-```
-
-### **Backend Deployment**
-```bash
-docker build -t decenter-ai-backend .
-docker run -p 5000:5000 decenter-ai-backend
-# or deploy via Render / Railway / AWS
-```
-
-### **Environment Setup for Production**
-- Switch `HEDERA_NETWORK` to `testnet`.
-- Update API keys and HTS token for live transactions.
 
 
 ---
 ## 🔑 Generating an API Key
 
-Add the shared wallet using this Private Key to access the platform 
+Add the EVM wallet using this Private Key to access the platform 
 0x411caf28d09f8ba5893906179b2fc520c4f123f7f8f4625b79362089676b49fe
 
 Then follow these steps to create and use your API key: 
