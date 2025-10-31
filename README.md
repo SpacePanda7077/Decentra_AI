@@ -92,13 +92,47 @@ DeCenter AI empowers developers and businesses to:
 
 ---
 
-## 🏗️ **Architecture**
 
-**Core Architecture Principles**
-- **Agentic:** Intelligent orchestration of AI agent results.  
-- **Agnostic:** Accessible from any connected device or platform.  
-- **Abstracted:** API-native for seamless integration and deployment.  
+## 🏗️ DeCenter AI B2B Web App Architecture
 
+```text
++------------------------------+
+| User Interface (Prompt Input)|
++--------------+---------------+
+               |
+               v
++--------------+--------------+
+| Super Agent (Model Selector) |
++--------------+--------------+
+               |
+               v
++--------------+--------------+
+| Model / Agent Inference     |
++--------------+--------------+
+               |
+               v
++--------------+--------------+
+| Hedera Registry (HCS) Log   |
++--------------+--------------+
+               |
+               v
++--------------+--------------+
+| Hedera Token Service (HTS)  |
+|  - Microtransactions        |
+|  - Reward Distribution      |
++--------------+--------------+
+               |
+               v
++--------------+--------------+
+| Result Verification (HCS)   |
++--------------+--------------+
+               |
+               v
++------------------------------+
+| Final Output Delivery to User|
++------------------------------+
+
+```
 **System Flow**
 ```
 Prompt 
