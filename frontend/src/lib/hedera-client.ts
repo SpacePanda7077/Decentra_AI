@@ -3,7 +3,8 @@ import {
   PrivateKey,
   Hbar,
   AccountId,
-  TransactionReceipt
+  TransactionReceipt,
+  getAccountBalance
 } from "@hashgraph/sdk";
 
 const accountId = process.env.HEDERA_ACCOUNT_ID;
@@ -44,16 +45,16 @@ export async function sendMessageToHedera(topicId: string, message: string) {
   });
 
             const submit = await tx.execute(hederaClient);
-            const receipt: TransactionReceipt = await submit.getReceipt(hederaClient);
+            const txreceipt: TransactionReceipt = await submit.getReceipt(hederaClient);
             // 1. Execute the transaction
-            const txResponse = await someTransaction.execute(client);
+            const txResponse = await someTransaction.execute(Client);
 
             // 2. Get receipt to confirm it succeeded
-            const receipt = await txResponse.getReceipt(client);
+            const txreceipt = await txResponse.getReceipt(Client);
             console.log("Status:", receipt.status.toString());
 
             // 3. Get transaction record to access consensusTimestamp
-            const record = await txResponse.getRecord(client);
+            const record = await txResponse.getRecord(Client);
 
             // 4. Extract the timestamp
             const consensusTimestamp = record.consensusTimestamp
