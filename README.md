@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/23260708/README.md)# DeCenter AI — AI Studio for Everyone
+(https://github.com/user-attachments/files/23260708/README.md)# DeCenter AI — AI Studio for Everyone
 
 ![DeCenter AI Logo](https://github.com/DeCenter-AI/.github/assets/131058062/7fceb64d-f875-4d08-b13e-aff561aab234)
 
