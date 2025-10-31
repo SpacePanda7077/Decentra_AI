@@ -1,49 +1,78 @@
+import {
+  Client,
+  PrivateKey,
+  Hbar,
+  AccountId,
+  TransactionReceipt
+} from "@hashgraph/sdk";
 
-import { ChatOpenAI } from '/@langchain/openai';
-import dotenv from 'dotenv';
+const accountId = process.env.HEDERA_ACCOUNT_ID;
+const privateKey = process.env.HEDERA_PRIVATE_KEY;
+const network = process.env.HEDERA_NETWORK || "testnet"; // "mainnet" or "testnet"
 
-dotenv.config({ path: './.env' });
-
-function createInstance(params) {
-  let {
-    modelName,
-    baseURL,
-    apiKey,
-    llmType,
-  } = params || {};
-  modelName = modelName || process.env.OPENROUTER_MODEL;
-  baseURL = baseURL || process.env.OPENROUTER_BASE_URL;
-  apiKey = apiKey || process.env.OPENROUTER_API_KEY;
-  llmType = llmType || modelName.split('/')[0];
-
-  console.log('openRouter openAI createInstance', {
-    modelName,
-    baseURL,
-    apiKey: apiKey.substring(0, 12) + '...',
-    llmType,
-  });
-
-  let llm;
-  switch (llmType) {
-    case 'openai':
-      llm = new ChatOpenAI({
-        modelName,
-        apiKey,
-        modalities: ['text'],
-        maxTokens: 1000,
-        temperature: 0.9,
-        configuration: {
-          baseURL,
-        },
-      });
-      break;
-    default:
-      throw new Error(`Unsupported LLM type: ${llmType}`);
-  }
-
-  return llm;
+if (!accountId || !privateKey) {
+  throw new Error("❌ Missing HEDERA_ACCOUNT_ID or HEDERA_PRIVATE_KEY in environment variables");
 }
 
-export {
-  createInstance,
-};
+export const hederaClient = (() => {
+  let client: Client;
+
+  if (network === "mainnet") {
+    client = Client.forMainnet();
+  } else {
+    client = Client.forTestnet();
+  }
+
+  client.setOperator(AccountId.fromString(accountId), PrivateKey.fromString(privateKey));
+  console.log(`✅ Hedera client initialized for ${network.toUpperCase()}`);
+
+  return client;
+})();
+
+/**
+ * Submit a message to Hedera Consensus Service
+ */
+
+
+
+export async function sendMessageToHedera(topicId: string, message: string) {
+  const { TopicMessageSubmitTransaction } = await import("@hashgraph/sdk");
+
+  const tx = new TopicMessageSubmitTransaction({
+    topicId,
+    message
+  });
+
+            const submit = await tx.execute(hederaClient);
+            const receipt: TransactionReceipt = await submit.getReceipt(hederaClient);
+            // 1. Execute the transaction
+            const txResponse = await someTransaction.execute(client);
+
+            // 2. Get receipt to confirm it succeeded
+            const receipt = await txResponse.getReceipt(client);
+            console.log("Status:", receipt.status.toString());
+
+            // 3. Get transaction record to access consensusTimestamp
+            const record = await txResponse.getRecord(client);
+
+            // 4. Extract the timestamp
+            const consensusTimestamp = record.consensusTimestamp
+            ? record.consensusTimestamp.toDate().toISOString()
+            : null;
+
+            console.log("Consensus Timestamp:", consensusTimestamp);
+
+
+            return {
+                transactionId: submit.transactionId.toString(),
+                consensusTimestamp
+            };
+            }
+
+/**
+ * Optional: Utility to get account balance
+ */
+export async function getHederaBalance() {
+  const balance = await hederaClient.getAccountBalance(AccountId.fromString(accountId));
+  return balance.hbars.toString(HbarUnit.Hbar);
+}
